@@ -46,4 +46,4 @@ jobs:
         with:
           cluster: ${{ env.AWS_ECS_CLUSTER }}
           service: ${{ env.AWS_ECS_SERVICE }}
-          image: ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/demo:${{ env.DOCKER_IMAGE_TAG }}
+          image: 557245836403.dkr.ecr.eu-central-1.amazonaws.com/demo:latest
