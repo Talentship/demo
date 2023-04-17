@@ -33,17 +33,6 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: |
-            ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/demo:${{ env.DOCKER_IMAGE_TAG }}
-
-      - name: Update ECS service
-        uses: aws-actions/amazon-ecs-deploy@v1
-        with:
-          cluster: ${{ env.AWS_ECS_CLUSTER }}
-          service: ${{ env.AWS_ECS_SERVICE }}
-          image: 557245836403.dkr.ecr.eu-central-1.amazonaws.com/demo:latest
+      - name: list repo
+        run: |
+          aws ecr describe-repositories
